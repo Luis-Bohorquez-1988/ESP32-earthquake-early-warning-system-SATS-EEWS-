@@ -1,0 +1,78 @@
+🌍 Sistema de Alarma Temprana Sísmica con ESP32 / ESP32 Seismic Early Warning System
+🇪🇸 Español
+📋 Descripción del Proyecto
+Sistema IoT de monitoreo sísmico de bajo costo basado en ESP32, un acelerómetro MPU6050, una tarjeta Micro SD para reproducción de audio directa sin errores de memoria (OOM), un amplificador PAM8403 y un Dashboard Web en tiempo real con notificaciones automáticas a Telegram.
+
+🛠️ Componentes Hardware
+Microcontrolador: ESP32 NodeMCU.
+
+Sensor de Movimiento: Acelerómetro MPU6050 (I2C).
+
+Almacenamiento: Módulo lector de tarjeta Micro SD (SPI).
+
+Audio: Amplificador PAM8403 y altavoz.
+
+Alimentación: Cargador de pared USB (mínimo 1A o 2A).
+
+📌 Conexión de Pines (Pinout Schematics)
+Plaintext
++-------------------------------------------------------+
+|                       ESP32                           |
+|                                                       |
+|   (GPIO 21) SDA <-------------> SDA (MPU6050)         |
+|   (GPIO 22) SCL <-------------> SCL (MPU6050)         |
+|                                                       |
+|   (GPIO 5)  CS  <-------------> CS  (Micro SD)        |
+|   (GPIO 23) MOSI <-------------> MOSI (Micro SD)      |
+|   (GPIO 19) MISO <-------------> MISO (Micro SD)      |
+|   (GPIO 18) SCK  <-------------> SCK  (Micro SD)      |
+|                                                       |
+|   (GPIO 25) DAC1 <-------------> LIN/RIN (PAM8403)    |
+|                                                       |
+|   3.3V / GND     <-------------> Alimentación Común   |
++-------------------------------------------------------+
+⚙️ Configuración del Software (Arduino IDE)
+Particiones: Selecciona Tools > Partition Scheme > Huge APP (3MB No OTA/1MB SPIFFS).
+
+Tarjeta SD: Prepara un archivo .wav renombrado a exactamente Alerta.wav en formato 8-bit, Mono PCM.
+
+Credenciales: Actualiza tu SSID, contraseña de Wi-Fi, Token de Telegram y Chat ID en el código fuente antes de compilar.
+
+🇬🇧 English
+📋 Project Description
+A low-cost IoT seismic monitoring system powered by an ESP32, an MPU6050 accelerometer, a Micro SD card module for direct block-by-block audio streaming (avoiding Out-Of-Memory errors), a PAM8403 amplifier, and a Real-Time Web Dashboard featuring automatic Telegram notifications.
+
+🛠️ Hardware Components
+Microcontroller: ESP32 NodeMCU.
+
+Motion Sensor: MPU6050 Accelerometer (I2C).
+
+Storage: Micro SD Card Reader Module (SPI).
+
+Audio: PAM8403 Amplifier and Speaker.
+
+Power Supply: USB wall charger (minimum 1A or 2A).
+
+📌 Pinout Schematics
+Plaintext
++-------------------------------------------------------+
+|                       ESP32                           |
+|                                                       |
+|   (GPIO 21) SDA <-------------> SDA (MPU6050)         |
+|   (GPIO 22) SCL <-------------> SCL (MPU6050)         |
+|                                                       |
+|   (GPIO 5)  CS  <-------------> CS  (Micro SD)        |
+|   (GPIO 23) MOSI <-------------> MOSI (Micro SD)      |
+|   (GPIO 19) MISO <-------------> MISO (Micro SD)      |
+|   (GPIO 18) SCK  <-------------> SCK  (Micro SD)      |
+|                                                       |
+|   (GPIO 25) DAC1 <-------------> LIN/RIN (PAM8403)    |
+|                                                       |
+|   3.3V / GND     <-------------> Common Power & GND   |
++-------------------------------------------------------+
+⚙️ Software Setup (Arduino IDE)
+Partition Scheme: Select Tools > Partition Scheme > Huge APP (3MB No OTA/1MB SPIFFS).
+
+SD Card: Format and place an audio file named exactly Alerta.wav formatted as 8-bit, Mono PCM.
+
+Credentials: Update your Wi-Fi SSID, password, Telegram Bot Token, and Chat ID in the source code prior to uploading.
