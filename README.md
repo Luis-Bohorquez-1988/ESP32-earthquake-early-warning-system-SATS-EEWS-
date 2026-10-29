@@ -40,7 +40,7 @@ Un sistema IoT de monitoreo sísmico de bajo costo basado en **ESP32**, un acele
 ## ⚙️ Configuración del Software (Arduino IDE)
 1. Selecciona la placa **ESP32 Dev Module**.
 2. En el menú de particiones, selecciona: **"Huge APP (3MB No OTA/1MB SPIFFS)"**.
-3. En SATS_EEWS. en las lineas 11 y 12, modifica las entradas con el SSID y PASSWORD de tu red wifi (2.4Ghz solamente)
+3. En SATS_EEWS.ino, en las lineas 11 y 12, modifica las entradas con el SSID y PASSWORD de tu red wifi (2.4Ghz solamente)
 4. Asegúrate de colocar en tu tarjeta Micro SD un archivo de audio llamado exactamente `alerta.wav` o el nombre de tu preferencia siempre y cuando coincida EXACTAMENTE con el código y el archivo de audio este codificado en **PCM de 8 bits, Mono**.
 5. Modifica las credenciales de tu red Wi-Fi y los datos de tu Bot de Telegram en el código fuente antes de subirlo.
 
